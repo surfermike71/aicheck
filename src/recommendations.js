@@ -25,7 +25,7 @@ function scoreOS(os) {
 
   if (platform === 'Unknown') return { code: 'fail', cowork: 'fail' };
 
-  if (platform === 'win32') {
+  if (platform === 'win32' || platform.toLowerCase() === 'windows') {
     // Windows 10 and 11 both report NT version 10.0.x in the release field.
     // Fall back to checking the distro name in case release is missing or
     // in an unexpected format on some Windows 11 systems.
