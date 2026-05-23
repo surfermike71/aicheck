@@ -258,6 +258,19 @@ function updateTimestamp() {
 window.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-refresh').addEventListener('click', runScan);
 
+  document.getElementById('btn-pdf').addEventListener('click', async function() {
+    const btn = document.getElementById('btn-pdf');
+    btn.disabled = true;
+    try {
+      const result = await window.api.savePDF();
+      if (result && !result.success && !result.canceled) {
+        alert('Could not save the PDF. Error: ' + result.error);
+      }
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
   // Open external links in the system browser
   document.addEventListener('click', function(e) {
     const link = e.target.closest('.fix-link');
