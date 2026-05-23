@@ -1,6 +1,6 @@
-const { contextBridge } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');
 
-// API methods will be exposed here in Phase 7
-// contextBridge.exposeInMainWorld('api', { ... });
-
-contextBridge.exposeInMainWorld('api', {});
+contextBridge.exposeInMainWorld('api', {
+  getSpecs:     ()      => ipcRenderer.invoke('get-specs'),
+  openExternal: (url)   => ipcRenderer.send('open-external', url),
+});

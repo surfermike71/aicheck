@@ -200,4 +200,5 @@ function evaluate(specs) {
   };
 }
 
-module.exports = { evaluate };
+// Works in both Node.js (main process) and the browser (renderer)
+if (typeof module !== 'undefined') module.exports = { evaluate };

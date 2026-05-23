@@ -25,7 +25,7 @@
     </div>
   </header>
 
-  <main id="main-content" data-verdict="yellow">
+  <main id="main-content" data-verdict="loading">
 
     <!-- Verdict card -->
     <section class="verdict-card verdict-yellow" id="verdict-card">
@@ -150,23 +150,23 @@
         <tbody>
           <tr>
             <td>Memory (RAM)</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>8 GB minimum</td>
-            <td class="cell-warn"><i class="ti ti-alert-triangle"></i>16 GB recommended</td>
+            <td id="table-ram-code"  class="cell-neutral">—</td>
+            <td id="table-ram-cowork" class="cell-neutral">—</td>
           </tr>
           <tr>
             <td>Free disk space</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>20 GB</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>20 GB</td>
+            <td id="table-disk-code"  class="cell-neutral">—</td>
+            <td id="table-disk-cowork" class="cell-neutral">—</td>
           </tr>
           <tr>
             <td>Operating system</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>macOS 10.15+, Windows 10+, Linux</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>macOS 12+, Windows 10+</td>
+            <td id="table-os-code"  class="cell-neutral">—</td>
+            <td id="table-os-cowork" class="cell-neutral">—</td>
           </tr>
           <tr>
             <td>Processor type</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>64-bit</td>
-            <td class="cell-pass"><i class="ti ti-check"></i>64-bit</td>
+            <td id="table-cpu-code"  class="cell-neutral">—</td>
+            <td id="table-cpu-cowork" class="cell-neutral">—</td>
           </tr>
         </tbody>
       </table>
@@ -174,6 +174,8 @@
 
   </main>
 
+  <script src="recommendations.js"></script>
+  <script src="copy.js"></script>
   <script src="renderer.js"></script>
 
   <footer>
