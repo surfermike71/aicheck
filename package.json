@@ -1,0 +1,32 @@
+{
+  "name": "aicheck",
+  "productName": "AICHECK",
+  "version": "0.1.0",
+  "description": "Find out if your computer is ready to run Claude Code and Claude Cowork.",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "author": {
+    "name": "Mike",
+    "email": "surf4waves@hotmail.com"
+  },
+  "license": "MIT",
+  "build": {
+    "appId": "com.aicheck.app",
+    "productName": "AICHECK",
+    "win": {
+      "target": "portable"
+    }
+  },
+  "devDependencies": {
+    "electron": "^42.2.0",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "@tabler/icons-webfont": "^3.44.0",
+    "systeminformation": "^5.31.6"
+  }
+}
