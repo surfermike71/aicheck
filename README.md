@@ -50,9 +50,27 @@ The only time anything leaves your computer is if you click **Save as PDF** — 
 
 ---
 
-## Mac support
+## Download and run on Mac
 
-Mac builds are coming. When available, they'll be listed on the Releases page alongside the Windows version.
+1. Go to the [Releases page](../../releases) and download the latest `AICHECK-x.x.x-mac.zip` file.
+2. Open your Downloads folder and double-click the `.zip` to unzip it. You'll get a file called `AICHECK.app`.
+3. Drag `AICHECK.app` to your Applications folder (optional but recommended).
+4. Double-click `AICHECK.app` to run it.
+
+### First-launch security warning
+
+Because AICHECK is not yet signed with an Apple developer certificate, macOS will block it the first time with a message like:
+
+> "AICHECK cannot be opened because it is from an unidentified developer."
+
+This is normal for independent apps. To get past it:
+
+1. Find `AICHECK.app` in your Applications folder (or wherever you saved it)
+2. **Right-click** (or Control-click) the app icon
+3. Choose **Open** from the menu
+4. Click **Open** in the dialog that appears
+
+You'll only need to do this once. After that it opens normally with a double-click.
 
 ---
 

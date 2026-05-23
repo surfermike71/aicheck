@@ -7,7 +7,8 @@
   "private": true,
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win portable"
+    "dist": "electron-builder --win portable",
+    "dist:mac": "electron-builder --mac zip"
   },
   "author": {
     "name": "Mike",
@@ -20,6 +21,9 @@
     "npmRebuild": false,
     "win": {
       "target": "portable"
+    },
+    "mac": {
+      "target": "zip"
     }
   },
   "devDependencies": {
