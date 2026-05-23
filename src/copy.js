@@ -17,7 +17,7 @@ const COPY = {
     red: {
       title: "This machine isn't ready for AI work yet",
       detail: function(n) {
-        return n + ' thing' + (n !== 1 ? 's' : '') + ' are blocking it. The good news — each fix is straightforward and we’ll walk you through it below.';
+        return n + ‘ thing’ + (n !== 1 ? ‘s’ : ‘’) + " are blocking it. The good news — each fix is straightforward and we’ll walk you through it below.";
       },
     },
   },
@@ -49,6 +49,6 @@ const COPY = {
     },
     ramType: 'For your information only',
     gpu:     'Not needed — AI tools run in the cloud',
-    unknown: 'We couldn’t detect this',
+    unknown: "We couldn’t detect this",
   },
 };

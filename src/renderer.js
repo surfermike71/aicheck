@@ -29,6 +29,12 @@ const STATUS_ICONS = {
   unknown: 'ti-help',
 };
 
+const VERDICT_ICONS = {
+  green:  'ti-circle-check',
+  yellow: 'ti-alert-triangle',
+  red:    'ti-alert-circle',
+};
+
 // ── Loading / error states ─────────────────────────────────────────────────
 
 function showLoading() {
@@ -42,7 +48,7 @@ function showError(msg) {
   document.getElementById('verdict-card').className = 'verdict-card verdict-red';
   document.getElementById('verdict-icon').className = 'ti ti-alert-circle verdict-icon';
   setText('verdict-title',  'Something went wrong');
-  setText('verdict-detail', 'We couldn't scan your machine. Error: ' + msg);
+  setText('verdict-detail', "We couldn't scan your machine. Error: " + msg);
 }
 
 // ── Verdict card ───────────────────────────────────────────────────────────
@@ -54,7 +60,7 @@ function renderVerdict(result) {
   const fixes  = result.fixes;
 
   card.className = 'verdict-card verdict-' + v;
-  icon.className = 'ti ' + (STATUS_ICONS[v] || 'ti-alert-triangle') + ' verdict-icon';
+  icon.className = 'ti ' + (VERDICT_ICONS[v] || 'ti-alert-triangle') + ' verdict-icon';
 
   if (v === 'green') {
     setText('verdict-title',  COPY.verdict.green.title);
