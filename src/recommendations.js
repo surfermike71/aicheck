@@ -19,13 +19,20 @@ function scoreDisk(freeGB) {
 
 // Scores OS compatibility per tool
 function scoreOS(os) {
-  const { platform, release } = os;
-  if (!platform || platform === 'Unknown') return { code: 'fail', cowork: 'fail' };
+  const platform = os.platform || 'Unknown';
+  const release  = os.release  || '';
+  const distro   = (os.distro  || '').toLowerCase();
+
+  if (platform === 'Unknown') return { code: 'fail', cowork: 'fail' };
 
   if (platform === 'win32') {
-    // Windows 10 and 11 both report NT version 10.0.x
-    const major = parseInt((release || '0').split('.')[0], 10);
-    const isWin10Plus = major >= 10;
+    // Windows 10 and 11 both report NT version 10.0.x in the release field.
+    // Fall back to checking the distro name in case release is missing or
+    // in an unexpected format on some Windows 11 systems.
+    const major = parseInt(release.split('.')[0], 10);
+    const isWin10Plus = major >= 10
+      || distro.includes('windows 10')
+      || distro.includes('windows 11');
     return { code: isWin10Plus ? 'pass' : 'fail', cowork: isWin10Plus ? 'pass' : 'fail' };
   }
 
