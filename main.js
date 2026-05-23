@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const { detectAll } = require('./src/detection');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -17,7 +18,12 @@ function createWindow() {
   win.loadFile(path.join(__dirname, 'src', 'index.html'));
 }
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  const specs = await detectAll();
+  console.log('\n=== AICHECK — detected specs ===');
+  console.log(JSON.stringify(specs, null, 2));
+  console.log('================================\n');
+
   createWindow();
 
   app.on('activate', () => {
