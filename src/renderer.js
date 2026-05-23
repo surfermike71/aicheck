@@ -21,6 +21,11 @@ const VERDICTS = {
   },
 };
 
+// Wire preview buttons
+document.getElementById('preview-green').addEventListener('click', () => setVerdict('green'));
+document.getElementById('preview-yellow').addEventListener('click', () => setVerdict('yellow'));
+document.getElementById('preview-red').addEventListener('click', () => setVerdict('red'));
+
 function setVerdict(color) {
   const v      = VERDICTS[color];
   const card   = document.getElementById('verdict-card');
