@@ -17,6 +17,7 @@
   "build": {
     "appId": "com.aicheck.app",
     "productName": "AICHECK",
+    "npmRebuild": false,
     "win": {
       "target": "portable"
     }
