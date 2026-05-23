@@ -25,7 +25,7 @@
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" data-verdict="yellow">
 
     <!-- Verdict card -->
     <section class="verdict-card verdict-yellow" id="verdict-card">
@@ -115,6 +115,61 @@
         </div>
 
       </div>
+    </section>
+
+    <!-- What to fix -->
+    <section class="section" id="section-fixes">
+      <h2 class="section-title">What to fix</h2>
+      <ol class="fix-list" id="fix-list">
+
+        <li class="fix-item">
+          <div class="fix-header">
+            <span class="fix-number">1</span>
+            <span class="fix-title">Add more RAM (you have 12 GB, Claude Cowork needs 16 GB)</span>
+          </div>
+          <p class="fix-body">Your computer doesn't have enough memory for Claude Cowork to run smoothly. Adding more RAM is the most effective upgrade for running AI tools.</p>
+          <a class="fix-link" href="#" data-url="https://support.microsoft.com/en-us/windows/how-to-check-ram-in-windows-ae038ee8-cf53-d2a2-d726-e06e2a85e5e1">
+            <i class="ti ti-external-link"></i> How to check RAM on Windows
+          </a>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- What each tool needs -->
+    <section class="section" id="section-table">
+      <h2 class="section-title">What each tool needs</h2>
+      <table class="requirements-table">
+        <thead>
+          <tr>
+            <th>Spec</th>
+            <th>Claude Code</th>
+            <th>Claude Cowork</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Memory (RAM)</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>8 GB minimum</td>
+            <td class="cell-warn"><i class="ti ti-alert-triangle"></i>16 GB recommended</td>
+          </tr>
+          <tr>
+            <td>Free disk space</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>20 GB</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>20 GB</td>
+          </tr>
+          <tr>
+            <td>Operating system</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>macOS 10.15+, Windows 10+, Linux</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>macOS 12+, Windows 10+</td>
+          </tr>
+          <tr>
+            <td>Processor type</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>64-bit</td>
+            <td class="cell-pass"><i class="ti ti-check"></i>64-bit</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
   </main>

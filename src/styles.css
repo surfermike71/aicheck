@@ -265,6 +265,141 @@ main {
   margin-top: 6px;
 }
 
+/* ── Fix section (hidden when verdict is green) ── */
+
+#main-content[data-verdict="green"] #section-fixes {
+  display: none;
+}
+
+.fix-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fix-item {
+  background: var(--foam);
+  border: 1px solid var(--shell);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fix-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.fix-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--foam);
+  background: var(--tide);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fix-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--deep-ocean);
+}
+
+.fix-body {
+  font-size: 13px;
+  color: var(--tide);
+  line-height: 1.6;
+  padding-left: 34px;
+}
+
+.fix-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--ocean-ink);
+  text-decoration: none;
+  padding-left: 34px;
+}
+
+.fix-link:hover {
+  text-decoration: underline;
+}
+
+.fix-link i {
+  font-size: 14px;
+}
+
+/* ── Requirements table ───────────────────────── */
+
+.requirements-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: var(--foam);
+  border: 1px solid var(--shell);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.requirements-table th,
+.requirements-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--shell);
+}
+
+.requirements-table tr:last-child td {
+  border-bottom: none;
+}
+
+.requirements-table thead th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mist);
+  background: var(--sand);
+}
+
+.requirements-table thead th:first-child {
+  width: 28%;
+}
+
+.requirements-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--deep-ocean);
+}
+
+.requirements-table .cell-pass {
+  color: var(--seafoam-ink);
+}
+
+.requirements-table .cell-warn {
+  color: var(--sunset-ink);
+}
+
+.requirements-table .cell-fail {
+  color: var(--coral-ink);
+}
+
+.requirements-table .cell-neutral {
+  color: var(--tide);
+}
+
+.requirements-table i {
+  font-size: 13px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
 /* ── Footer ───────────────────────────────────── */
 
 footer {
