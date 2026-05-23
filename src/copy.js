@@ -1,4 +1,4 @@
-const COPY = {
+var COPY = {
   verdict: {
     green: {
       title: "You're ready for AI work",
