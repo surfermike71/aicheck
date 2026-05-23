@@ -112,32 +112,6 @@ header {
   font-size: 16px;
 }
 
-/* ── Phase 4 preview controls (removed in Phase 5) ── */
-
-.preview-controls {
-  display: flex;
-  gap: 8px;
-  padding: 10px 24px;
-  background: var(--shell);
-  font-size: 12px;
-}
-
-.preview-controls button {
-  padding: 4px 12px;
-  border-radius: 4px;
-  border: 1px solid var(--shell-strong);
-  background: var(--foam);
-  cursor: pointer;
-  font-size: 12px;
-  font-family: inherit;
-  color: var(--tide);
-}
-
-.preview-controls button:hover {
-  background: var(--ocean-bg);
-  color: var(--ocean-ink);
-}
-
 /* ── Verdict card ─────────────────────────────── */
 
 .verdict-card {
@@ -189,6 +163,106 @@ main {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* ── Sections ─────────────────────────────────── */
+
+.section {
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--deep-ocean);
+  margin-bottom: 14px;
+}
+
+/* ── Status badges (shared by tool rows + spec cards) ── */
+
+.status-pass    { color: var(--seafoam-ink); }
+.status-warn    { color: var(--sunset-ink); }
+.status-fail    { color: var(--coral-ink); }
+.status-unknown { color: var(--mist); }
+
+/* ── Tool readiness rows ──────────────────────── */
+
+.tool-rows {
+  border: 1px solid var(--shell);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tool-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--foam);
+  border-bottom: 1px solid var(--shell);
+}
+
+.tool-row:last-child {
+  border-bottom: none;
+}
+
+.tool-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--deep-ocean);
+}
+
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.tool-badge.status-pass    { background: var(--seafoam-bg); color: var(--seafoam-ink); }
+.tool-badge.status-warn    { background: var(--sunset-bg);  color: var(--sunset-ink); }
+.tool-badge.status-fail    { background: var(--coral-bg);   color: var(--coral-ink); }
+.tool-badge.status-unknown { background: var(--shell);      color: var(--mist); }
+
+/* ── Specs grid ───────────────────────────────── */
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.spec-card {
+  background: var(--foam);
+  border: 1px solid var(--shell);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-label {
+  font-size: 12px;
+  color: var(--mist);
+}
+
+.spec-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--deep-ocean);
+  word-break: break-word;
+}
+
+.spec-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  margin-top: 6px;
 }
 
 /* ── Footer ───────────────────────────────────── */

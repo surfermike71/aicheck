@@ -25,14 +25,6 @@
     </div>
   </header>
 
-  <!-- PHASE 4 PREVIEW CONTROLS — remove in Phase 5 -->
-  <div class="preview-controls">
-    <span style="color:var(--tide);align-self:center;">Preview verdict:</span>
-    <button id="preview-green">Green</button>
-    <button id="preview-yellow">Yellow</button>
-    <button id="preview-red">Red</button>
-  </div>
-
   <main id="main-content">
 
     <!-- Verdict card -->
@@ -40,6 +32,89 @@
       <i class="ti ti-alert-triangle verdict-icon" id="verdict-icon"></i>
       <h1 class="verdict-title" id="verdict-title">Almost there — 1 thing to sort out</h1>
       <p class="verdict-detail" id="verdict-detail">Claude Code will run fine on your machine. Claude Cowork needs a bit more RAM to work smoothly — see the fix below.</p>
+    </section>
+
+    <!-- Tool readiness -->
+    <section class="section" id="section-tools">
+      <h2 class="section-title">Tool readiness</h2>
+      <div class="tool-rows">
+        <div class="tool-row">
+          <span class="tool-name">Claude Code</span>
+          <span class="tool-badge status-pass" id="badge-code">
+            <i class="ti ti-check"></i> Ready
+          </span>
+        </div>
+        <div class="tool-row">
+          <span class="tool-name">Claude Cowork</span>
+          <span class="tool-badge status-warn" id="badge-cowork">
+            <i class="ti ti-alert-triangle"></i> Almost ready
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Your system -->
+    <section class="section" id="section-specs">
+      <h2 class="section-title">Your system</h2>
+      <div class="specs-grid">
+
+        <div class="spec-card">
+          <span class="spec-label">Operating system</span>
+          <span class="spec-value" id="spec-os-value">Windows 10 Pro</span>
+          <span class="spec-status status-pass" id="spec-os-status">
+            <i class="ti ti-check"></i> Supported
+          </span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-label">Memory (RAM)</span>
+          <span class="spec-value" id="spec-ram-value">12 GB</span>
+          <span class="spec-status status-warn" id="spec-ram-status">
+            <i class="ti ti-alert-triangle"></i> Enough for Claude Code, not Cowork
+          </span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-label">Memory type</span>
+          <span class="spec-value" id="spec-ramtype-value">DDR4 at 3200 MHz</span>
+          <span class="spec-status status-unknown" id="spec-ramtype-status">
+            <i class="ti ti-help"></i> For your information only
+          </span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-label">Free disk space</span>
+          <span class="spec-value" id="spec-disk-value">30 GB free of 256 GB</span>
+          <span class="spec-status status-pass" id="spec-disk-status">
+            <i class="ti ti-check"></i> Enough space
+          </span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-label">Processor</span>
+          <span class="spec-value" id="spec-cpu-value">Intel Core i7-8750H</span>
+          <span class="spec-status status-pass" id="spec-cpu-status">
+            <i class="ti ti-check"></i> Compatible
+          </span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-label">Processor type</span>
+          <span class="spec-value" id="spec-arch-value">64-bit</span>
+          <span class="spec-status status-pass" id="spec-arch-status">
+            <i class="ti ti-check"></i> Supported
+          </span>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-label">Graphics card</span>
+          <span class="spec-value" id="spec-gpu-value">Intel UHD 630</span>
+          <span class="spec-status status-unknown" id="spec-gpu-status">
+            <i class="ti ti-help"></i> Not needed for AI tools
+          </span>
+        </div>
+
+      </div>
     </section>
 
   </main>
