@@ -25,9 +25,26 @@
     </div>
   </header>
 
+  <!-- PHASE 4 PREVIEW CONTROLS — remove in Phase 5 -->
+  <div class="preview-controls">
+    <span style="color:var(--tide);align-self:center;">Preview verdict:</span>
+    <button onclick="setVerdict('green')">Green</button>
+    <button onclick="setVerdict('yellow')">Yellow</button>
+    <button onclick="setVerdict('red')">Red</button>
+  </div>
+
   <main id="main-content">
-    <!-- Sections added in later phases -->
+
+    <!-- Verdict card -->
+    <section class="verdict-card verdict-yellow" id="verdict-card">
+      <i class="ti ti-alert-triangle verdict-icon" id="verdict-icon"></i>
+      <h1 class="verdict-title" id="verdict-title">Almost there — 1 thing to sort out</h1>
+      <p class="verdict-detail" id="verdict-detail">Claude Code will run fine on your machine. Claude Cowork needs a bit more RAM to work smoothly — see the fix below.</p>
+    </section>
+
   </main>
+
+  <script src="renderer.js"></script>
 
   <footer>
     <span class="footer-privacy">
