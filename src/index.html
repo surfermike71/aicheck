@@ -2,10 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; font-src 'self' data:;" />
+  <link rel="stylesheet" href="../node_modules/@tabler/icons-webfont/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="styles.css" />
   <title>AICHECK</title>
 </head>
 <body>
-  <p>AICHECK loading…</p>
+
+  <header>
+    <div class="header-left">
+      <i class="ti ti-paw logo-icon"></i>
+      <span class="brand">AICHECK</span>
+    </div>
+    <div class="header-right">
+      <button class="btn" id="btn-refresh">
+        <i class="ti ti-refresh"></i> Refresh
+      </button>
+      <button class="btn" id="btn-pdf">
+        <i class="ti ti-file-text"></i> Save PDF
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Sections added in later phases -->
+  </main>
+
+  <footer>
+    <span class="footer-privacy">
+      <i class="ti ti-lock"></i>
+      Everything stays on your computer. Nothing is sent or saved anywhere.
+    </span>
+    <span>Version 0.1.0</span>
+  </footer>
+
 </body>
 </html>
