@@ -227,10 +227,36 @@ function renderAll(specs, result) {
   renderTable(result);
 }
 
+// ── Scan ───────────────────────────────────────────────────────────────────
+
+async function runScan() {
+  const btnRefresh = document.getElementById('btn-refresh');
+  showLoading();
+  if (btnRefresh) btnRefresh.disabled = true;
+
+  try {
+    const specs  = await window.api.getSpecs();
+    const result = evaluate(specs);
+    renderAll(specs, result);
+    updateTimestamp();
+  } catch (err) {
+    showError(String(err));
+  } finally {
+    if (btnRefresh) btnRefresh.disabled = false;
+  }
+}
+
+function updateTimestamp() {
+  const el = document.getElementById('last-scanned');
+  if (!el) return;
+  const now  = new Date();
+  el.textContent = 'Last scanned at ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
 // ── Boot ───────────────────────────────────────────────────────────────────
 
-window.addEventListener('DOMContentLoaded', async function() {
-  showLoading();
+window.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btn-refresh').addEventListener('click', runScan);
 
   // Open external links in the system browser
   document.addEventListener('click', function(e) {
@@ -242,11 +268,5 @@ window.addEventListener('DOMContentLoaded', async function() {
     }
   });
 
-  try {
-    const specs  = await window.api.getSpecs();
-    const result = evaluate(specs);
-    renderAll(specs, result);
-  } catch (err) {
-    showError(String(err));
-  }
+  runScan();
 });
