@@ -1,8 +1,17 @@
 const si = require('systeminformation');
 
+const TIMEOUT_MS = 5000;
+
+function withTimeout(promise) {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('timeout')), TIMEOUT_MS)
+  );
+  return Promise.race([promise, timeout]);
+}
+
 async function getOS() {
   try {
-    const info = await si.osInfo();
+    const info = await withTimeout(si.osInfo());
     return {
       platform: info.platform || 'Unknown',
       distro: info.distro || 'Unknown',
@@ -16,7 +25,7 @@ async function getOS() {
 
 async function getRAM() {
   try {
-    const mem = await si.mem();
+    const mem = await withTimeout(si.mem());
     return {
       totalGB: mem.total ? +(mem.total / 1073741824).toFixed(1) : 'Unknown',
     };
@@ -27,7 +36,7 @@ async function getRAM() {
 
 async function getRAMLayout() {
   try {
-    const layout = await si.memLayout();
+    const layout = await withTimeout(si.memLayout());
     if (!layout || layout.length === 0) return { type: 'Unknown', speedMHz: 'Unknown' };
     const first = layout[0];
     return {
@@ -41,9 +50,8 @@ async function getRAMLayout() {
 
 async function getDisk() {
   try {
-    const drives = await si.fsSize();
+    const drives = await withTimeout(si.fsSize());
     if (!drives || drives.length === 0) return { freeGB: 'Unknown', totalGB: 'Unknown' };
-    // Use the drive with the most free space (usually the main drive)
     const main = drives.reduce((a, b) => (b.available > a.available ? b : a));
     return {
       freeGB: +(main.available / 1073741824).toFixed(1),
@@ -56,7 +64,7 @@ async function getDisk() {
 
 async function getCPU() {
   try {
-    const cpu = await si.cpu();
+    const cpu = await withTimeout(si.cpu());
     return {
       model: cpu.brand || 'Unknown',
       arch: cpu.physicalCores ? (cpu.physicalCores > 0 ? '64-bit' : 'Unknown') : 'Unknown',
@@ -69,7 +77,7 @@ async function getCPU() {
 
 async function getGPU() {
   try {
-    const graphics = await si.graphics();
+    const graphics = await withTimeout(si.graphics());
     if (!graphics || !graphics.controllers || graphics.controllers.length === 0) {
       return { model: 'Unknown' };
     }

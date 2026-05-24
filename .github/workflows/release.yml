@@ -25,13 +25,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Mac .zip
+      - name: Build Mac .dmg
         run: npm run dist:mac
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.zip
+          files: dist/*.dmg
           fail_on_unmatched_files: true

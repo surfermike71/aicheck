@@ -52,10 +52,10 @@ The only time anything leaves your computer is if you click **Save as PDF** — 
 
 ## Download and run on Mac
 
-1. Go to the [Releases page](../../releases) and download the latest `AICHECK-x.x.x-mac.zip` file.
-2. Open your Downloads folder and double-click the `.zip` to unzip it. You'll get a file called `AICHECK.app`.
-3. Drag `AICHECK.app` to your Applications folder (optional but recommended).
-4. Double-click `AICHECK.app` to run it.
+1. Go to the [Releases page](../../releases) and download the latest `AICHECK-x.x.x.dmg` file.
+2. Double-click the `.dmg` file to open it. A window appears showing the AICHECK icon.
+3. Drag `AICHECK` into your Applications folder.
+4. Open your Applications folder and double-click `AICHECK` to run it.
 
 ### First-launch security warning
 
@@ -65,12 +65,22 @@ Because AICHECK is not yet signed with an Apple developer certificate, macOS wil
 
 This is normal for independent apps. To get past it:
 
-1. Find `AICHECK.app` in your Applications folder (or wherever you saved it)
+1. Find `AICHECK` in your Applications folder
 2. **Right-click** (or Control-click) the app icon
 3. Choose **Open** from the menu
 4. Click **Open** in the dialog that appears
 
 You'll only need to do this once. After that it opens normally with a double-click.
+
+### If the app still won't open
+
+If right-click → Open doesn't work (this can happen on macOS 14 Sonoma and newer), open Terminal and run:
+
+```bash
+xattr -cr /Applications/AICHECK.app
+```
+
+Then double-click the app normally. This removes the quarantine flag macOS adds to files downloaded from the internet.
 
 ---
 
