@@ -1,6 +1,28 @@
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
 out/
+*.exe
+*.dmg
+*.zip
+
+# Logs
 *.log
+npm-debug.log*
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Test outputs from AICHECK during dev
+*.pdf
