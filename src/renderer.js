@@ -281,5 +281,10 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Inject app version into footer from package.json at runtime
+  window.api.getAppVersion()
+    .then(function(v) { setText('app-version', 'Version ' + v); })
+    .catch(function()  { setText('app-version', 'Version unknown'); });
+
   runScan();
 });

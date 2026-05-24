@@ -25,6 +25,9 @@ ipcMain.handle('get-specs', async () => {
   return await detectAll();
 });
 
+// Renderer asks for the app version → Electron reads this from package.json automatically
+ipcMain.handle('get-version', () => app.getVersion());
+
 // Renderer asks to save a PDF → show save dialog, generate PDF, write file
 ipcMain.handle('save-pdf', async (event) => {
   const { filePath, canceled } = await dialog.showSaveDialog({
