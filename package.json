@@ -1,14 +1,15 @@
 {
   "name": "aicheck",
   "productName": "AICHECK",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Find out if your computer is ready to run Claude Code and Claude Cowork.",
   "main": "main.js",
   "private": true,
+  "_scripts_note": "CLI target flags (--win portable, --mac dmg) must stay in sync with build.win.target and build.mac.target below. The CLI flag wins if they conflict — that's what caused the zip-vs-dmg bug.",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --win portable",
-    "dist:mac": "electron-builder --mac zip"
+    "dist:mac": "electron-builder --mac dmg"
   },
   "author": {
     "name": "Mike",
